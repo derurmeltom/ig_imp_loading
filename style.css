@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: url("background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #f1dcdc;
+}
+
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background:
+        radial-gradient(circle at center, rgba(80,0,0,0.35), rgba(0,0,0,0.9)),
+        rgba(0,0,0,0.85);
+}
+
+/* SCANLINES */
+.scanlines {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.03),
+            rgba(255,255,255,0.03) 1px,
+            rgba(0,0,0,0) 2px,
+            rgba(0,0,0,0) 4px
+        );
+    animation: scanmove 6s linear infinite;
+}
+
+@keyframes scanmove {
+    from { background-position: 0 0; }
+    to { background-position: 0 100%; }
+}
+
+/* CENTER */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.logo {
+    width: 140px;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 0 10px rgba(180,0,0,0.6));
+}
+
+/* TITLE */
+.title {
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: #ffb3b3;
+    text-shadow: 0 0 8px rgba(150,0,0,0.6);
+}
+
+.subtitle {
+    color: #c88;
+    margin-bottom: 30px;
+}
+
+/* LOADING BAR */
+.loading-bar {
+    width: 420px;
+    height: 18px;
+    border: 2px solid #662222;
+    margin: 20px auto;
+    background: rgba(0,0,0,0.6);
+}
+
+#progress {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #550000, #cc0000);
+    box-shadow: 0 0 10px rgba(200,0,0,0.8);
+}
+
+.status {
+    font-size: 14px;
+    color: #caa;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 12px;
+    color: #966;
+}
+
+/* STAFF LIST */
+.staff {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 260px;
+    text-align: left;
+    background: rgba(20,0,0,0.4);
+    padding: 15px;
+    border: 1px solid #552222;
+}
+
+.staff h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #552222;
+    padding-bottom: 5px;
+    color: #ff9999;
+}
+
+.staff-section {
+    margin-bottom: 15px;
+}
+
+.rank {
+    display: block;
+    color: #ff5555;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
